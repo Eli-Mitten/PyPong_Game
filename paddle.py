@@ -5,6 +5,7 @@ STARTING_POSITION_P1 = (-360, 0)
 MOVE_DISTANCE = 20
 SCREEN_HEIGHT = 600
 
+
 class Paddle(Turtle):
     def __init__(self, player):
         super().__init__()
@@ -17,7 +18,6 @@ class Paddle(Turtle):
             self.goto(STARTING_POSITION_P2)
         else:
             self.goto(STARTING_POSITION_P1)
-
 
     def move_up(self):
         if self.ycor() + MOVE_DISTANCE <= (SCREEN_HEIGHT / 2 - 25):
