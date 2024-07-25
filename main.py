@@ -1,4 +1,6 @@
 from turtle import Screen
+
+from ball import Ball
 from paddle import Paddle
 import time
 
@@ -20,7 +22,16 @@ screen.onkeypress(paddle_p2.move_down, "s")
 
 game_is_on = True
 while game_is_on:
+    time.sleep(0.1)
     screen.update()
-    time.sleep(0.01)
+    ball.move()
+
+    if ball.ycor() > 280 or ball.ycor() < -280:
+        ball.bounce_y()
+
+    if ((ball.distance(paddle_p1) < 50 and ball.xcor() > 320) or (
+            ball.distance(paddle_p2) < 50 and ball.xcor() < -330)):
+        ball.bounce_x()
+
 
 screen.exitonclick()
