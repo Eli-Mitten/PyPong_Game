@@ -1,7 +1,7 @@
 from turtle import Turtle
 
-STARTING_POSITION_P1 = (350, 0)
-STARTING_POSITION_P2 = (-360, 0)
+STARTING_POSITION_P2 = (350, 0)
+STARTING_POSITION_P1 = (-360, 0)
 MOVE_DISTANCE = 20
 SCREEN_HEIGHT = 600
 
@@ -14,9 +14,9 @@ class Paddle(Turtle):
         self.penup()
         self.color("white")
         if player == 1:
-            self.goto(STARTING_POSITION_P1)
-        else:
             self.goto(STARTING_POSITION_P2)
+        else:
+            self.goto(STARTING_POSITION_P1)
 
 
     def move_up(self):
